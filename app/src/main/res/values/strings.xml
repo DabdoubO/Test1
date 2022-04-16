@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Test</string>
+    <string name="choose_your_drink">Choose Your Drink!</string>
+    <string name="submit">submit</string>
+    <string-array name="drinks">
+        <item>coffe</item>
+        <item>tea</item>
+        <item>water</item>
+        <item>milk</item>
+    </string-array>
+</resources>

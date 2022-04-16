@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="8dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/choose_your_drink"
+        android:textSize="24dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"/>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/spin"
+        android:layout_marginBottom="20dp"
+        android:entries="@array/drinks"/>
+
+    <Button
+        android:id="@+id/BTNSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/submit"
+        android:textSize="20dp"
+        android:onClick="BTNSubmit_onClick"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="70dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_margin="30dp"
+        android:id="@+id/res"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
