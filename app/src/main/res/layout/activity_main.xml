@@ -19,12 +19,12 @@
         android:layout_gravity="center"/>
 
     <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:layout_gravity="center"
+
         android:id="@+id/spin"
-        android:layout_marginBottom="20dp"
-        android:entries="@array/drinks"/>
+        android:layout_marginBottom="20dp"/>
 
     <Button
         android:id="@+id/BTNSubmit"
@@ -35,13 +35,11 @@
         android:textSize="20dp"
         android:onClick="BTNSubmit_onClick"/>
 
-    <EditText
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="70dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:layout_margin="30dp"
-        android:id="@+id/res"/>
+        android:id="@+id/LSTDrinks"
+        />
+
 
 </androidx.appcompat.widget.LinearLayoutCompat>
