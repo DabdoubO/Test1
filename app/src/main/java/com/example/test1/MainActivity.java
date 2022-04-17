@@ -30,23 +30,34 @@ public class MainActivity extends AppCompatActivity {
 
         setView();
         setSpinner();
-        spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                int item = spin.getSelectedItemPosition();
-                String toShow = spin.getAdapter().getItem(item).toString();
-                Toast.makeText(getApplicationContext(), toShow, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
+        toToast();
 
     }
+    private void toToast() {
+        // to toast the selected category from the spinner
+//        spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//
+//            @Override
+//            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+//                int item = spin.getSelectedItemPosition();
+//                String toShow = spin.getAdapter().getItem(item).toString();
+//                Toast.makeText(getApplicationContext(), toShow, Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> adapterView) {
+//
+//            }
+//        });
 
+        // to toast the checked item from the list
+        LSTDrinks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(getApplicationContext(), LSTDrinks.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
     private void setSpinner() {
         DrinksMockUp database = new DrinksMockUp();
         String[] cats = database.getCategories();
