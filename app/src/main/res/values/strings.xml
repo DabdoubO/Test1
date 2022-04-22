@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Test</string>
     <string name="choose_your_drink">Choose Your Drink!</string>
-    <string name="submit">Search</string>
+    <string name="submit">Send</string>
     <string-array name="drinks">
         <item>coffe</item>
         <item>tea</item>

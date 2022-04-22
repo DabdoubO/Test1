@@ -9,6 +9,7 @@
     android:layout_margin="8dp"
     tools:context=".MainActivity">
 
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,20 +27,22 @@
         android:id="@+id/spin"
         android:layout_marginBottom="20dp"/>
 
-    <Button
-        android:id="@+id/BTNSubmit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/submit"
-        android:textSize="20dp"
-        android:onClick="BTNSubmit_onClick"/>
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/LSTDrinks"
         />
+
+    <Button
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@color/black"
+        android:onClick="email"
+        android:text="@string/submit" />
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,7 +1,10 @@
 package com.example.test1;
 
+import static android.R.layout.simple_list_item_1;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -30,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         setView();
         setSpinner();
+        showList();
         toToast();
 
     }
@@ -62,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         DrinksMockUp database = new DrinksMockUp();
         String[] cats = database.getCategories();
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_dropdown_item, cats);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(adapter);
@@ -85,5 +89,34 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<Drinks> LSTAdapter = new ArrayAdapter<Drinks>(this,
                 android.R.layout.simple_list_item_1, result);
         LSTDrinks.setAdapter(LSTAdapter);
+    }
+
+    private void showList(){
+        spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                BTNSubmit_onClick(view);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+    }
+
+    public void email(View view){
+        Intent email = new Intent(Intent.ACTION_SEND);
+        email.putExtra(Intent.EXTRA_SUBJECT, "Drinks List");
+        String emailBody = "";
+        for (int i = 0; i < LSTDrinks.getCount(); i++){
+            emailBody+= LSTDrinks.getItemAtPosition(i).toString() + "\n";
+        }
+        email.putExtra(Intent.EXTRA_TEXT, emailBody);
+
+        email.setType("text/plain");
+
+        startActivity(Intent.createChooser(email, "Choose an Email Client!"));
     }
 }
