@@ -15,6 +15,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.test1.model.*;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
@@ -58,7 +59,16 @@ public class MainActivity extends AppCompatActivity {
         LSTDrinks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getApplicationContext(), LSTDrinks.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), LSTDrinks.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
+                Snackbar snack = Snackbar.make(view, LSTDrinks.getItemAtPosition(i).toString(), Snackbar.LENGTH_SHORT);
+                snack.setAction("UNDO", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(getApplicationContext(), "Do smt", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                snack.show();
+
             }
         });
     }
